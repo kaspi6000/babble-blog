@@ -14,16 +14,15 @@ const userRoute = (app, User) => {
       res.status(500).json({ msg: "DB ERROR!" });
     }
   });
-  // test
-  app.get(`${DEFAULT_API}/test`, (req, res) => {
+  // SginIn
+  app.get(`${DEFAULT_API}/signin`, (req, res) => {
+    console.log(`API : ${DEFAULT_API}/signin ============ ${req.body}`);
     try {
-      User.find({}, (err, user) => {
+      User.find({ id: req.body.id }, (err, user) => {
         if (err) throw err;
-        res.status(200).json(user);
+        res.status(200).json({ ...user, isLogin: true });
       });
-    } catch (error) {
-      res.status(500).json({ msg: "DB ERROR!" });
-    }
+    } catch (error) {}
   });
 };
 

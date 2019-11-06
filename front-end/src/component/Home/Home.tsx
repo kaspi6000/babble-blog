@@ -7,7 +7,8 @@ const Main = styled.div`
   margin: 0 auto;
   z-index: 1;
   position: relative;
-  padding: 170px 32px 32px 0;
+  padding: 170px 0px 32px 0;
+  min-height: 1000px;
   /* height: 3000px; */
 `;
 

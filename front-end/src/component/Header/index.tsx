@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Header = styled.header`
   display: flex;
@@ -29,13 +30,50 @@ const HeadItem = styled.div`
   align-items: center;
 `;
 
+const Icon = styled.img.attrs(props => ({
+  src: props.src
+}))`
+  width: 1.5rem;
+  margin: auto 8px;
+  cursor: pointer;
+`;
+
+const CustomLink = styled(Link)`
+  text-decoration: none;
+  color: #000;
+`;
+
+const SearchWrap = styled.div`
+  cursor: pointer;
+  span {
+    color: #95a5a6;
+    vertical-align: super;
+  }
+`;
+
 const HeaderContainer: React.FC = () => {
   return (
     <Header>
       <HeaderWrap>
-        <HeadItem>Left</HeadItem>
-        <HeadItem>Center</HeadItem>
-        <HeadItem>Right</HeadItem>
+        <HeadItem>
+          <SearchWrap>
+            <Icon src="/images/search.png" />
+            <span>Search</span>
+          </SearchWrap>
+        </HeadItem>
+        <HeadItem>
+          <CustomLink to="">
+            <h1>Dlog</h1>
+          </CustomLink>
+        </HeadItem>
+        <HeadItem>
+          <Icon src="/images/facebook.png" />
+          <Icon src="/images/github.png" />
+          <Icon src="/images/google.png" />
+          <Icon src="/images/instagram.png" />
+          {/* Icon for Not SNS login user */}
+          <Icon src="/images/lock.png" />
+        </HeadItem>
       </HeaderWrap>
     </Header>
   );

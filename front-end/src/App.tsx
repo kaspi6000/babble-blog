@@ -1,3 +1,6 @@
+// IE issue
+import "react-app-polyfill/ie9";
+
 import React from "react";
 import { Router, Route } from "react-router-dom";
 import { createBrowserHistory } from "history";

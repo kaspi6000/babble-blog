@@ -7,6 +7,7 @@ const Footer = styled.footer`
   display: flex;
   justify-content: center;
   width: 100%;
+  padding: 2rem 0;
 `;
 
 const FooterContainer: React.FC = () => {

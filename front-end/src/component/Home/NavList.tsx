@@ -9,7 +9,10 @@ const Nav = styled.nav`
   bottom: 150px;
 `;
 
-const NavItem = styled.div``;
+const NavItem = styled.div`
+  cursor: pointer;
+  margin-top: 4px;
+`;
 
 const NavList: React.FC = () => {
   return (

@@ -2,20 +2,19 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Header = styled.header`
+const Header = styled.header<any>`
   display: flex;
   position: fixed;
   width: 100%;
   z-index: 2;
   height: 50px;
   background: #ecf0f1;
-  border-bottom: 1px solid transparent;
+  border-bottom: ${props => props.isScroll && "1px solid #95a5a6"};
   justify-content: center;
 `;
 
 const HeaderWrap = styled.div<any>`
   padding: ${props => (props.isScroll ? "0px 40px 0px" : "56px 40px 0px")};
-  border-bottom: ${props => props.isScroll && "1px solid #95a5a6"};
   width: 100%;
   max-width: 1440px;
   display: flex;
@@ -54,23 +53,32 @@ const SearchWrap = styled.div`
 
 const HeaderContainer: React.FC = () => {
   const [scroll, setScroll] = React.useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return window.removeEventListener("scroll", handleScroll, true);
+  }, []);
+
   useEffect(() => {
     handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-  }, []);
+  }, [window.scrollY]);
+
   const handleScroll = () => {
-    console.log(window.scrollY);
     const scrollHeight = window.scrollY;
-    if (scrollHeight > 70 && !scroll) {
+
+    // Scroll reflow issue 처리전
+    if (scrollHeight > 80) {
       setScroll(true);
-    } else if (scrollHeight < 70 && scroll) {
+    } else if (scrollHeight < 80) {
       setScroll(false);
     }
-    return;
   };
+
   console.log(scroll);
+
   return (
-    <Header>
+    <Header isScroll={scroll}>
       <HeaderWrap isScroll={scroll}>
         <HeadItem>
           <SearchWrap>

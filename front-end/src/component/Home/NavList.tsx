@@ -5,6 +5,7 @@ const Nav = styled.nav`
   position: fixed;
   height: 50vh;
   margin-top: -50vh;
+  margin-left: 8px;
   bottom: 150px;
 `;
 

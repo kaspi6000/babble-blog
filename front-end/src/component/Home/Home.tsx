@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import NavList from "./NavList";
+import Post from "./Post";
 
 const Main = styled.div`
-  min-width: 1250px;
+  /* min-width: 1250px; */
   max-width: 1440px;
   margin: 0 auto;
   z-index: 1;
@@ -14,13 +15,15 @@ const Main = styled.div`
 `;
 
 const Section = styled.div`
-  margin-left: 200px;
+  margin: auto 160px;
 `;
 
 const Home: React.FC = () => (
   <Main>
     <NavList />
-    <Section>Home</Section>
+    <Section>
+      <Post />
+    </Section>
   </Main>
 );
 

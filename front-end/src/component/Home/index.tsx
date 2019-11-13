@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import NavList from "./NavList";
-import Post from "./Post";
+import PostCard from "./PostCard";
 
 const Main = styled.main`
   /* min-width: 1250px; */
@@ -45,7 +45,7 @@ const HomeContainer: React.FC = () => {
   return (
     <Main>
       <Section isMobile={isMobile}>
-        <Post />
+        <PostCard />
       </Section>
       <NavList isMobile={isMobile} />
     </Main>

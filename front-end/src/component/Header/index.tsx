@@ -82,11 +82,13 @@ const HeaderContainer: React.FC = () => {
     const scrollHeight = window.scrollY;
 
     // Scroll reflow issue 처리전
+    console.log(scrollHeight, scroll);
     if (scrollHeight > 80) {
-      if (scrollHeight > 80 && scroll) return true;
+      // if (scrollHeight > 80 && scroll) return true;
       setScroll(true);
       // console.log("true", scroll);
     } else if (scrollHeight < 80) {
+      // if (scrollHeight < 80 && !scroll) return true;
       setScroll(false);
       // console.log("false");
     }
@@ -101,7 +103,7 @@ const HeaderContainer: React.FC = () => {
     }
   };
 
-  // console.log(scroll);
+  console.log(scroll);
 
   return (
     <Header isScroll={scroll}>

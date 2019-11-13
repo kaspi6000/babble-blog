@@ -34,7 +34,7 @@ const PostDescription = styled.div<any>`
   height: 50%;
 `;
 
-const Post: React.FC = () => {
+const PostCard: React.FC = () => {
   return (
     <>
       <PostWrap>
@@ -86,4 +86,4 @@ const Post: React.FC = () => {
   );
 };
 
-export default Post;
+export default PostCard;

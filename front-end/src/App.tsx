@@ -9,16 +9,19 @@ import { createBrowserHistory } from "history";
 import HeaderContainer from "./component/Header";
 import FooterContainer from "./component/Footer";
 import HomeContainer from "./component/Home";
+import WriteContainer from "./component/Write";
 
 const history = createBrowserHistory();
 
 const App: React.FC = () => {
   return (
     <Router history={history}>
-      <Route path="/" component={HeaderContainer} />
+      <Route exact path="/" component={HeaderContainer} />
 
       <Route exact path="/" component={HomeContainer} />
-      <Route path="/" component={FooterContainer} />
+      <Route exact path="/write" component={WriteContainer} />
+
+      <Route exact path="/" component={FooterContainer} />
     </Router>
   );
 };

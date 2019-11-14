@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import ReactMarkDown from "react-markdown";
-// import htmlParser from 'react-markdown/plugins/html-parser';
 import Markdown from "markdown-to-jsx";
 
 const WriteWrap = styled.div`

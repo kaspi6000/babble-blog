@@ -3,20 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/jest": "24.0.18",
-    "@types/markdown-to-jsx": "^6.9.0",
-    "@types/node": "12.7.5",
-    "@types/react": "16.9.2",
-    "@types/react-dom": "16.9.0",
-    "@types/react-router-dom": "^5.1.2",
-    "@types/styled-components": "^4.1.20",
+    "babel-loader": "^8.0.6",
+    "highlight.js": "^9.16.2",
     "markdown-to-jsx": "^6.10.3",
     "react": "^16.9.0",
     "react-app-polyfill": "^1.0.4",
     "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.1",
     "styled-components": "^4.4.1",
+    "ts-loader": "^6.2.1",
     "typescript": "3.6.3"
   },
   "scripts": {
@@ -42,5 +39,15 @@
       "ie 9",
       "ie 11"
     ]
+  },
+  "devDependencies": {
+    "@types/highlight.js": "^9.12.3",
+    "@types/jest": "^24.0.18",
+    "@types/markdown-to-jsx": "^6.9.0",
+    "@types/node": "^12.7.5",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.2",
+    "@types/styled-components": "^4.4.0"
   }
 }

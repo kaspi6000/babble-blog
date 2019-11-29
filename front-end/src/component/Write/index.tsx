@@ -16,7 +16,11 @@ hljs.registerLanguage("html", html);
 
 const WriteWrap = styled.div`
   /* padding: 300px; */
-  height: 94vh;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  z-index: -1;
+  height: 94.5vh;
   display: flex;
   flex-flow: row;
 `;
@@ -33,25 +37,28 @@ const MarkdownWrap = styled.div`
   width: 50%;
   height: 100%;
   background: #2c3e50;
-  overflow: scroll;
+  /* overflow: auto; */
 `;
 
 const ViewWrap = styled.div`
-  width: 50%;
+  width: 100%;
   height: 100%;
   background: #fff;
-  overflow: scroll;
+  overflow: auto;
   word-break: break-all;
 `;
 
 const Textarea = styled.textarea`
-  width: 94%;
+  width: 100%;
   height: 100%;
   background: #2c3e50;
   color: #fff;
   border-style: none;
   outline-style: none;
-  margin: 16px;
+  padding: 0;
+  /* margin: auto 16px;
+  padding-right: 47px;
+  padding-top: 18px; */
 `;
 
 const CustomMarkdown = styled(Markdown)`
@@ -60,6 +67,13 @@ const CustomMarkdown = styled(Markdown)`
 
 const Back = styled.span`
   cursor: pointer;
+  margin-left: 16px;
+`;
+
+const TestWrap = styled.div`
+  width: 50%;
+  height: 100%;
+  background: #2c3e50;
 `;
 
 const Write = () => {
@@ -76,15 +90,14 @@ const Write = () => {
   return (
     <>
       <WriteHeader>
-        <Back onClick={() => window.history.back()}>{`뒤로가기`}</Back>
+        <Back onClick={() => window.history.back()}>Go Back</Back>
       </WriteHeader>
       <WriteWrap>
-        <MarkdownWrap>
-          <Textarea
-            spellCheck={false}
-            onChange={e => setContent(e.target.value)}
-          />
-        </MarkdownWrap>
+        <TestWrap>
+          <MarkdownWrap style={{ margin: "16px" }}>
+            <Textarea spellCheck={false} onChange={e => setContent(e.target.value)} />
+          </MarkdownWrap>
+        </TestWrap>
         <ViewWrap>
           <CustomMarkdown>{content}</CustomMarkdown>
         </ViewWrap>
